@@ -1,5 +1,4 @@
 name: figma_icon_builder
-publish_to: 'none'
 description: Fetch and export icons from figma
 version: 0.0.1
 homepage:
@@ -17,10 +16,7 @@ dependencies:
   console: ^4.1.0
   dart_style: ^2.0.1
   dotenv: ^3.0.0
-  figma:
-    git: 
-      url: git@github.com:bjartebore/figma-1.git
-      ref: 18a55f64a88e39e8875ee9bf68fbb6be6400eddf
+  figma: ^3.0.0
   glob: ^2.0.1
   http: ^0.13.0
   path: ^1.8.0

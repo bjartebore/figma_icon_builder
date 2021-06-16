@@ -137,12 +137,10 @@ packages:
   figma:
     dependency: "direct main"
     description:
-      path: "."
-      ref: "18a55f64a88e39e8875ee9bf68fbb6be6400eddf"
-      resolved-ref: "18a55f64a88e39e8875ee9bf68fbb6be6400eddf"
-      url: "git@github.com:bjartebore/figma-1.git"
-    source: git
-    version: "2.1.0+1"
+      name: figma
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.0.0"
   file:
     dependency: transitive
     description:
