@@ -1,0 +1,32 @@
+name: figma_icon_builder
+publish_to: 'none'
+description: Fetch and export icons from figma
+version: 0.0.1
+homepage:
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+  flutter: ">=2.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  path_drawing: ^0.5.1
+  code_builder: ^4.0.0
+  concurrent_queue: ^1.3.0
+  console: ^4.1.0
+  dart_style: ^2.0.1
+  dotenv: ^3.0.0
+  figma:
+    git: 
+      url: git@github.com:bjartebore/figma-1.git
+      ref: 18a55f64a88e39e8875ee9bf68fbb6be6400eddf
+  glob: ^2.0.1
+  http: ^0.13.0
+  path: ^1.8.0
+  recase: ^4.0.0
+  xml: ^5.1.2
+  
+dev_dependencies:
+  import_sorter: ^4.4.2
+  
