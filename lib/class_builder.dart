@@ -165,13 +165,15 @@ import 'package:code_builder/code_builder.dart';
         methodBuilder.body = Block.of([
           Code('''
             final IconThemeData iconThemeData = IconTheme.of(context);
-
-            return CustomPaint(
-              key: key,
-              painter: ${painterClass.name}(
-                color: foregroundColor ?? iconThemeData.color ?? Colors.black,
+            return ConstrainedBox(
+              constraints: BoxConstraints.tight(size),
+              child: CustomPaint(
+                key: key,
+                painter: ${painterClass.name}(
+                  color: foregroundColor ?? iconThemeData.color ?? Colors.black,
+                ),
+                size: size,
               ),
-              size: size,
             );
           '''),
         ]);
