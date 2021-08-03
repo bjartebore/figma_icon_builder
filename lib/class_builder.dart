@@ -231,7 +231,7 @@ import 'package:code_builder/code_builder.dart';
       libraryBuilder.directives.addAll([
         Directive.import('package:flutter/material.dart'),
         Directive.import('package:path_drawing/path_drawing.dart'),
-        Directive.import('package:figma_icon_builder/painted_icon.dart'),
+        Directive.import('package:figma_icon/figma_icon.dart'),
         Directive.import('package:flutter/rendering.dart'),
       ]);
       libraryBuilder.body.addAll([
