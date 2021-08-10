@@ -134,7 +134,13 @@ class FigmaIconFetcher {
 
         if (xml != '') {
           XmlDocument xmlDocument = XmlDocument.parse(xml);
-          final String dartFile = buildPainterClass(iconName.pascalCase, xmlDocument);
+
+          final root = xmlDocument.firstChild;
+
+          int width = int.tryParse(root?.getAttribute('width') ?? '') ?? 24;
+          int height = int.tryParse(root?.getAttribute('height') ?? '') ?? 24;
+
+          final String dartFile = buildPainterClass(iconName.pascalCase, xmlDocument, width, height);
 
           dartFileQueue.add(() async {
             final file = File('${outputPath.absolute.path}/${iconName.snakeCase}.dart');

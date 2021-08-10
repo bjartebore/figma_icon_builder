@@ -2,7 +2,7 @@ import 'package:dart_style/dart_style.dart';
 import 'package:xml/xml.dart';
 import 'package:code_builder/code_builder.dart';
 
-  String buildPainterClass(String iconName, XmlDocument xmlDocument) {
+  String buildPainterClass(String iconName, XmlDocument xmlDocument, int width, int height) {
 
     final XmlElement svgElement =  xmlDocument.findElements('svg').first;
 
@@ -32,14 +32,14 @@ import 'package:code_builder/code_builder.dart';
         fieldBuilder.name = 'width';
         fieldBuilder.type = refer('double');
         fieldBuilder.modifier = FieldModifier.final$;
-        fieldBuilder.assignment = const Code('24');
+        fieldBuilder.assignment = Code('${width}');
       }));
 
       classBuilder.fields.add(Field((fieldBuilder) {
         fieldBuilder.name = 'height';
         fieldBuilder.type = refer('double');
         fieldBuilder.modifier = FieldModifier.final$;
-        fieldBuilder.assignment = const Code('24');
+        fieldBuilder.assignment = Code('${height}');
       }));
 
       classBuilder.fields.add(Field((fieldBuilder) {
@@ -123,7 +123,7 @@ import 'package:code_builder/code_builder.dart';
 
         final sizeParam = Parameter((parameterBuilder) {
           parameterBuilder.name = 'size';
-          parameterBuilder.defaultTo = const Code('const Size(24, 24)');
+          parameterBuilder.defaultTo = Code('const Size(${width}, ${height})');
           parameterBuilder.named = true;
           parameterBuilder.toThis = true;
         });
